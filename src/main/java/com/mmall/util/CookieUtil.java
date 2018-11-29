@@ -21,7 +21,7 @@ public class CookieUtil {
                 log.info("read cookieName:{},cookieValue:{}",ck.getName(),ck.getValue());
                 if (StringUtils.equals(ck.getName(),COOKIE_NAME)){
                     log.info("return cookieName:{},cookieValue:{}",ck.getName(),ck.getValue());
-                    ck.getValue();
+                    return ck.getValue();
                 }
             }
         }

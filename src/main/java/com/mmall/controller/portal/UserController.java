@@ -20,7 +20,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Created by geely
+ * @author Pan shujun
+ * @version V1.0.0
+ * Description description
+ * @date 2018/011/28 13:43
  */
 @Controller
 @RequestMapping("/user/")
@@ -45,6 +48,7 @@ public class UserController {
         if(response.isSuccess()){
 //            session.setAttribute(Const.CURRENT_USER,response.getData());
             CookieUtil.writeLoginToken(response1,session.getId());
+            //将token和序列化后的登录信息都存到了redis中
             RedisPoolUtil.setEX(session.getId(), JsonUtil.obj2String(response.getData()),Const.RedisCacheExtime.REDIS_SESSION_EXTIME);
         }
         return response;
@@ -55,6 +59,7 @@ public class UserController {
     public ServerResponse<String> logout(HttpServletRequest request,HttpServletResponse response){
 //        session.removeAttribute(Const.CURRENT_USER);
         String loginToken = CookieUtil.readLoginToken(request);
+        CookieUtil.delLoginToken(request,response);
          RedisPoolUtil.del(loginToken);
         return ServerResponse.createBySuccess();
     }

@@ -8,6 +8,13 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+/**
+ * @author Pan shujun
+ * @version V1.0.0
+ * Description description
+ * @date 2018/011/28 13:43
+ */
 @Slf4j
 public class CookieUtil {
 

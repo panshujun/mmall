@@ -6,10 +6,10 @@ import redis.clients.jedis.Jedis;
 
 
 /**
- * @author lanmeiniu@outlook.com
+ * @author Pan shujun
  * @version V1.0.0
  * Description description
- * @date 2018/09/21 13:43
+ * @date 2018/011/28 13:43
  */
 @Slf4j
 public class RedisPoolUtil {

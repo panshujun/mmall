@@ -11,10 +11,10 @@ import org.codehaus.jackson.type.TypeReference;
 import java.text.SimpleDateFormat;
 
 /**
- * @author lanmeiniu@outlook.com
+ * @author Pan shujun
  * @version V1.0.0
  * Description description
- * @date 2018/09/22 09:44
+ * @date 2018/011/28 13:43
  */
 @Slf4j
 public class JsonUtil {

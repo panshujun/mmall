@@ -64,7 +64,7 @@ public class RedisPool {
         jedisPoolConfig.setBlockWhenExhausted(true);
 
 
-        jedisPool = new JedisPool(jedisPoolConfig,redisIp,redisPort,1000*2,redisPassword);
+        jedisPool = new JedisPool(jedisPoolConfig,redisIp,redisPort,1000*2);
     }
 
     // 初始化连接池

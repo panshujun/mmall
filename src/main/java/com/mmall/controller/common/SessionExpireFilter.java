@@ -23,7 +23,7 @@ public class SessionExpireFilter implements Filter{
         //获取token
         String loginToken = CookieUtil.readLoginToken(httpServletRequest);
         //如果token不为空或‘’
-        if (StringUtils.isNotEmpty(loginToken)){
+        if (!StringUtils.isNotEmpty(loginToken)){
             //通过token去redis中获取登录信息
             String userJoonStr = RedisPoolUtil.get(loginToken);
             User user = JsonUtil.string2Obj(userJoonStr, User.class);
@@ -31,6 +31,7 @@ public class SessionExpireFilter implements Filter{
             //user不为空，则重置session的时间，调用expire命令
             RedisPoolUtil.expire(loginToken, Const.RedisCacheExtime.REDIS_SESSION_EXTIME);
         }
+        filterChain.doFilter(servletRequest,servletResponse);
     }
 
     @Override

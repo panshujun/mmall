@@ -253,6 +253,13 @@
       <version>1.16.8</version>
     </dependency>
 
+    <!-- spring session 单点登录 -->
+    <dependency>
+      <groupId>org.springframework.session</groupId>
+      <artifactId>spring-session-data-redis</artifactId>
+      <version>1.2.0.RELEASE</version>
+    </dependency>
+
   </dependencies>
 
 
